@@ -48,7 +48,7 @@ app.post("/api/send-pdf", async (req, res) => {
     );
 
     await client.sendMessage(tel, media, {
-      caption: "Olá, segue o orçamento em anexo.",
+      caption: `Olá ${req.body.name}, segue o orçamento em anexo.`,
     });
 
     res.status(200).json({
